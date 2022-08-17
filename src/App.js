@@ -1,10 +1,16 @@
 import './App.css';
 import TextAndPicture from "./components/TextAndPicture/TextAndPicture"
 import StringComponent from "./components/StringComponent/StringComponent"
+import NamesLi from './components/NamesLi/NamesLi';
+import ButtonsAndCounter from './components/ButtonsAndCounter/ButtonsAndCounter';
+import ButtonOnOff from './components/ButtonOnOff/ButtonOnOff';
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <ButtonOnOff text={"open"} />
+        <ButtonsAndCounter stepUp={3} stepDown={2} />
+        <NamesLi names={["loren", "Michael", "jorf", "bogdan"]} />
         <h1>
           Hello World
         </h1>
