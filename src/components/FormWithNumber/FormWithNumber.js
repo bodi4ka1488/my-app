@@ -1,28 +1,26 @@
 import React, { Component } from 'react';
 import "./FormWithNumber.css"
+import Output from './Output';
 
 class FormWithNumber extends Component {
     state = {
         value: "",
-        sum: ""
     }
     handlerChange(event) {
 
         this.setState({ value: event.target.value })
     }
-    sum(event) {
-        event.preventDefault();
-        this.setState({ sum: this.state.value * 0.5 })
-    }
+
+
 
     render() {
         return (
-            <form className='numberForm' onSubmit={(e) => this.sum(e)}>
-                <label>
-                    <input type="number" onChange={(e) => this.handlerChange(e)} value={(this.state.value)} />
-                </label>
-                <input type="submit" />
-                <div>{this.state.sum}</div>
+            <form className='numberForm'>
+                <input type="number" onChange={(e) => this.handlerChange(e)} value={(this.state.value)} />
+                <Output value={this.state.value} Mul={0.5} />
+                <Output value={this.state.value} Mul={0.05} />
+
+
             </form>
         );
     }
